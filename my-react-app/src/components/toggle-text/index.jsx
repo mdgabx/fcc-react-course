@@ -4,12 +4,14 @@ export const ToggleApp = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   const handleToggleVisibility = () => {
-    
+    setIsVisible(!isVisible);
   };
   
   return (
     <div id="toggle-container">
-      <button id="toggle-button">Message</button>
+      <button onClick={handleToggleVisibility} id="toggle-button">
+        {!isVisible ? "Show Message" : "Hide Message" }
+      </button>
       {isVisible && <p id="message">I love freeCodeCamp!</p>}
     </div>
   );
